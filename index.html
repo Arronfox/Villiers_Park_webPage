@@ -12,14 +12,33 @@
 	}
  </style>
  <script>
- alert("This is a popup;");
+ alert("This is a popup");
+ <script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('ii').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
  </script>
 </head>
+
 <center>
-<body style = "font-family:Arial">
+<body style = "font-family:Arial" onload="startTime()">
  <h1 class = "title">
 	Subjects
  </h1>
+ <div id = "ii"></div>
  <p>I am currently doing three different subjects at school. However I only have coursework in one of them. 
 	I will still however create a page about all three of them. </p> 
  <p> <a href = "maths.html"><b>Maths</b></a> <a href = "computerscience.html"><b>Computer Science</b></a> <a href = "chemistry.html"><b>Chemistry</b></a> </p>
